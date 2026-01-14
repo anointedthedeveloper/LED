@@ -79,7 +79,7 @@ LED/
 ## 🚀 Features
 
 ### Core Features
-- ✅ Firebase Authentication (Email/Password)
+- ✅ Firebase Authentication (Email/Password + Email Link)
 - ✅ Multi-bot management per user
 - ✅ QR Code & Phone Number pairing
 - ✅ Auto-reconnect on disconnect
@@ -169,7 +169,6 @@ FIREBASE_SERVICE_ACCOUNT={"type":"service_account",...}
 FIREBASE_DATABASE_URL=https://your-project.firebaseio.com
 
 # Optional API Keys
-REMOVEBG_API_KEY=your_key
 NEWS_API_KEY=your_key
 ```
 
@@ -200,9 +199,10 @@ mkdir backend/sessions backend/temp
 ### Firebase Setup
 
 1. Create a Firebase project at https://console.firebase.google.com
-2. Enable Authentication > Email/Password
-3. Create Firestore database
-4. Set Firestore rules:
+2. Enable Authentication > Email/Password and Email Link (passwordless sign-in)
+3. Add your domain to Authorized Domains (Authentication > Settings)
+4. Create Firestore database
+5. Set Firestore rules:
 
 ```javascript
 rules_version = '2';
@@ -266,8 +266,9 @@ npm run start:frontend # Terminal 2
 
 ### 1. User Registration
 1. Visit http://localhost:3000
-2. Sign up with email/password
-3. Redirected to dashboard
+2. Sign up with email/password OR use email link sign-in
+3. For email link: Check email and click the link to complete sign-in
+4. Redirected to dashboard
 
 ### 2. Create Bot
 1. Click "Create Bot"

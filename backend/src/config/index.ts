@@ -10,7 +10,6 @@ export const config = {
     databaseURL: process.env.FIREBASE_DATABASE_URL
   },
   apis: {
-    removeBgKey: process.env.REMOVEBG_API_KEY,
     newsApiKey: process.env.NEWS_API_KEY,
     animeApiUrl: process.env.ANIME_API_URL || 'https://api.jikan.moe/v4',
     poetryApiUrl: process.env.POETRY_API_URL || 'https://poetrydb.org',
