@@ -98,6 +98,12 @@ LED/
 - ✅ Custom prefix per bot
 - ✅ Sticker creation with metadata
 
+### Authentication Methods
+- **Email/Password**: Traditional authentication
+- **Email Link**: Passwordless sign-in via email
+- **Cross-device support**: Email links work across devices
+- **Security**: Built-in email verification
+
 ### Implemented Commands
 
 #### Utility
@@ -137,12 +143,61 @@ LED/
 - `-unwarn @user` - Clear warnings
 - `-link` - Get invite link
 
+## 🌐 API Dependencies
+
+### Required APIs
+- **Firebase**: Authentication, Firestore database
+- **Baileys**: WhatsApp Web API
+
+### Optional APIs (for bot commands)
+- **News API**: Latest news (`NEWS_API_KEY`)
+- **Free APIs** (no key required):
+  - Jikan API (anime information)
+  - Poetry DB (poetry and quotes)
+  - Dictionary API (word definitions)
+  - Urban Dictionary API (slang definitions)
+  - Official Joke API (random jokes)
+  - Advice Slip API (random advice)
+  - Meme API (random memes)
+  - Genderize API (name gender prediction)
+  - Horoscope API (daily horoscopes)
+
+### Removed APIs
+- ❌ Remove.bg API (background removal) - Removed for simplicity
+
 ## 🔧 Installation
 
 ### Prerequisites
 - Node.js 18+
 - Firebase project
-- API keys (optional for full features)
+- Optional: News API key for news commands
+
+### Required Dependencies
+
+**Frontend:**
+```json
+{
+  "next": "^14.0.4",
+  "react": "^18.2.0",
+  "firebase": "^10.7.1",
+  "react-qr-code": "^2.0.12",
+  "react-hot-toast": "^2.4.1",
+  "lucide-react": "^0.303.0",
+  "tailwindcss": "^3.4.0"
+}
+```
+
+**Backend:**
+```json
+{
+  "@whiskeysockets/baileys": "^6.6.0",
+  "express": "^4.18.2",
+  "firebase-admin": "^12.0.0",
+  "socket.io": "^4.6.1",
+  "sharp": "^0.33.1",
+  "fluent-ffmpeg": "^2.1.2"
+}
+```
 
 ### Setup
 
